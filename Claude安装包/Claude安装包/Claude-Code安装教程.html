@@ -478,11 +478,27 @@
                     <p>然后把这个内容复制进去：<code>"hasCompletedOnboarding": true,</code></p>
                     <p>保存文件，确保 CC Switch 已经切换到你自己的渠道后，重启你的 Claude Code。如果你的格式会报错，比如多了一个引号、括号或句号，可以把文件里的内容全选复制，发给任意一个网页版 AI，让它只修复格式、保留原有内容，然后把结果重新粘贴回来。</p>
 
-                    <div class="img-placeholder">
-                        [.claude.json 文件位置截图]
+                    <div style="margin: 20px 0; text-align: center;">
+                        <img src="_shots/screenshots/claude.json.png" alt=".claude.json 文件位置截图" style="max-width: 100%; border-radius: 8px; border: 1px solid #e5e7eb;">
                     </div>
                 </div>
             </details>
+
+            <h3>假如出现 claude 登录后出现 model 的报错</h3>
+            <p>假如在登录 Claude 的时候出现 model 识别的报错，如下图所示，需要去 Claude 安装目录下的 <code>settings.json</code> 文件里更改 model 的名字。</p>
+            <p>比如把 <code>deepseek-v4-pro</code> 改成 Claude 能识别的官方模型名，例如可以改成 <code>claude-opus-4-8</code>。改成此模型后，Claude 就可以正常接入，并且正常读取 1M 的上下文，最大 1M 的上下文。</p>
+
+            <div style="margin: 20px 0; text-align: center;">
+                <img src="_shots/screenshots/Model报错.png" alt="Model 不识别报错截图" style="max-width: 100%; border-radius: 8px; border: 1px solid #e5e7eb;">
+            </div>
+
+            <div style="margin: 20px 0; text-align: center;">
+                <img src="_shots/screenshots/setting.json.png" alt="settings.json 修改 model 名称" style="max-width: 100%; border-radius: 8px; border: 1px solid #e5e7eb;">
+            </div>
+
+            <div style="margin: 20px 0; text-align: center;">
+                <img src="_shots/screenshots/模型映射.png" alt="模型名称映射关系" style="max-width: 100%; border-radius: 8px; border: 1px solid #e5e7eb;">
+            </div>
         </section>
 
         <section id="section5">
