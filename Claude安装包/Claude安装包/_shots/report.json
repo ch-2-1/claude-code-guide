@@ -1,0 +1,389 @@
+{
+  "src": "C:\\Users\\x'x\\Desktop\\Claude-Code安装教程.html",
+  "url": "file:///C:/Users/x%27x/Desktop/Claude-Code%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html",
+  "outdir": "C:\\Users\\x'x\\Desktop\\_shots",
+  "include": [
+    "lint",
+    "screenshots",
+    "structure"
+  ],
+  "shots": {
+    "desktop": {
+      "screenshot": "C:\\Users\\x'x\\Desktop\\_shots\\Claude-Code安装教程_desktop.jpg",
+      "screenshotBytes": 286457,
+      "truncated": false,
+      "structure": {
+        "title": "Claude Code 最新版安装教程 | 陈浩",
+        "firstH1": "Claude Code 最新版安装教程",
+        "viewport": {
+          "w": 1410,
+          "h": 758
+        },
+        "fullpage": {
+          "w": 1410,
+          "h": 5284
+        },
+        "counts": {
+          "section": 6,
+          "h1": 1,
+          "h2": 6,
+          "img": 2,
+          "canvas": 0,
+          "svg": 0,
+          "links": 19,
+          "buttons": 4
+        }
+      },
+      "consoleErrors": [],
+      "consoleWarnings": [],
+      "horizontalOverflow": [],
+      "resourceErrors": [],
+      "deadButtons": [
+        {
+          "tag": "a",
+          "text": "视频版",
+          "reason": "a-href-hash-no-handler",
+          "rect": [
+            1069,
+            157,
+            46,
+            26
+          ]
+        },
+        {
+          "tag": "a",
+          "text": "GitHub",
+          "reason": "a-href-hash-no-handler",
+          "rect": [
+            627,
+            1660,
+            50,
+            21
+          ]
+        },
+        {
+          "tag": "a",
+          "text": "智谱 GLM",
+          "reason": "a-href-hash-no-handler",
+          "rect": [
+            295,
+            2591,
+            69,
+            21
+          ]
+        },
+        {
+          "tag": "a",
+          "text": "MiniMax",
+          "reason": "a-href-hash-no-handler",
+          "rect": [
+            380,
+            2591,
+            61,
+            21
+          ]
+        },
+        {
+          "tag": "a",
+          "text": "Kimi",
+          "reason": "a-href-hash-no-handler",
+          "rect": [
+            457,
+            2591,
+            31,
+            21
+          ]
+        },
+        {
+          "tag": "a",
+          "text": "DeepSeek",
+          "reason": "a-href-hash-no-handler",
+          "rect": [
+            504,
+            2591,
+            71,
+            21
+          ]
+        },
+        {
+          "tag": "a",
+          "text": "API 服务",
+          "reason": "a-href-hash-no-handler",
+          "rect": [
+            493,
+            2634,
+            60,
+            21
+          ]
+        },
+        {
+          "tag": "a",
+          "text": "GitHub Releases",
+          "reason": "a-href-hash-no-handler",
+          "rect": [
+            427,
+            2813,
+            114,
+            21
+          ]
+        }
+      ],
+      "deadButtonsHint": "含义：视觉上可点、但点了不发生任何事的元素。覆盖 6 种模式，reason 字段指明是哪种： | button-no-onclick：<button> 既无 onclick 也没被 addEventListener('click') 绑过。 | onclick-noop：onclick 属性是占位/无副作用字符串（`return false` / `void(0)` / 空串 / 分号 / 纯注释等），extra 字段 onclickAttr 展示原始值。这类写法在生产代码里几乎没有正当用途，视同没写。 | a-no-href / a-href-empty / a-href-hash-no-handler：<a> 无 href / href=\"\" / href=\"#\" 且无 handler。 | a-href-javascript-noop-no-handler：<a href=\"javascript:void(0)\" / \"javascript:;\">，作者显式关掉 native 导航，但 JS 侧也没人接手。收紧路径：祖先有 click listener 时，还要验证 listener 源码是否引用了本元素的 class/id/data-* 才放行；listener 源码不可读（native/bound/被 minify）时保守放行，避免误伤。extra 字段 hrefAttr 展示原始 href。 | a-broken-anchor：<a href=\"#foo\"> 但页面里没有 id=\"foo\" 也没有 name=\"foo\" 的元素。已排除 SPA hash 路由（href 含 / 或 ? 的形式，如 #/dashboard）。 | cursor-pointer-no-handler：<div>/<span> 等非交互标签加了 cursor:pointer 却没绑任何 click。 | input-no-handler：<input type=button|submit|reset|image> 无 onclick 也无 listener。form 里的 submit/reset 已豁免。 | label-for-not-found：<label for=\"xxx\"> 但页面里没有 id=\"xxx\"。用户点 label 期望 focus 到 input，实际什么都不发生。extra 字段 forAttr 展示 for 值。 | 已排除：form submit/reset、popover 触发器、role=button/link/tab/menuitem/option/switch/checkbox/radio、<label> 包裹、body/html 上继承 cursor:pointer；cursor-pointer-no-handler 只报尺寸 ≥ 24×16 且有可见文字的元素。 | 修法：给 <button>/<input> 加 onclick 或 addEventListener；给 <a> 补真实 href 或改成 <button>；把 <div class=\"nav-item\">…</div> 之类假按钮换成真 <button> 或 <a>，或给它加 role=button+tabindex+键盘 handler；onclick=\"return false\" 之类占位符要么删掉（配合真 handler），要么替换为 toast 提示「演示中」这类可感知反馈；断链锚点核对目标 id 拼写；label 断链核对 for 与 input id 是否一致。 | 豁免：(1) 带 note=ancestor-has-data-attr 的项可能是**祖先事件委托**目标（document/window 上的全局委托本规则查不到），对着代码核对，如果确实有 document.addEventListener('click', e => e.target.closest(...)) 之类的委托捕获就忽略；(2) 纯装饰按钮（无 hover/focus 反馈的 mock 页面）——但这本身也算 slop，建议改成非 <button>；(3) cursor-pointer-no-handler：如果元素只是 hover 变鼠标做微交互提示（如 tooltip trigger）而非真按钮，去掉 cursor:pointer 更合适；(4) a-href-javascript-noop-no-handler：如果确实有全局委托捕获（如 window.addEventListener 或 minify 后的框架 handler），本规则的 listener 源码启发式可能读不到明文标识 → 结合 note 字段和实际代码核对；(5) a-broken-anchor：如果目标 id 是运行时由 JS 动态注入的（比如懒加载章节），核对确认后可忽略。",
+      "emojiUsageWarning": [
+        {
+          "tag": "h3",
+          "chars": "⚠",
+          "contextText": "⚠️ 重要声明"
+        }
+      ],
+      "emojiUsageHint": "warning · 含义：页面正文里检出 emoji 字符（U+1F300–U+1FAFF 或 U+2600–U+27BF 平面）。SKILL.md 视觉设计段明确禁用 emoji——不作图标、不作装饰、不放进数据。 | 修法：换成内联 SVG 图标（<svg viewBox=\"0 0 24 24\">）建立风格连贯的图标语言。 | 豁免：(1) **用户品牌资产明确包含 emoji**（罕见，但如即时通讯、社交媒体主题的产物合理）；(2) 主题本身就是关于 emoji 的（emoji 历史 / 表情包研究 / Unicode 演进）；(3) 引用某条真实文本原文（如推文截图的文字版），emoji 是内容而非装饰——保留原文可接受，但仍应权衡；(4) 装饰性 dingbat（如 U+2713 勾选符 ✓、U+2192 箭头 →、U+2605 星 ★）落入 U+2600–U+27BF 平面被误报的，如确认是符号非 emoji 可忽略。",
+      "faviconWarning": {
+        "present": false
+      },
+      "faviconHint": "warning · 含义：没有任何 favicon 声明——浏览器 tab、书签、历史记录里显示的是空白默认图标，产物看起来没做完。实测模型原始产物的缺失率 94%。 | 修法：用**内联 SVG data URI**，一行搞定、零额外文件：`<link rel=\"icon\" type=\"image/svg+xml\" href=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F766E'/%3E%3Ctext x='32' y='44' font-size='36' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E\">`。图形取产物主题里的一个符号（首字母、核心图标、品牌形状），配色沿用页面主色，别用无关的通用图标。 | **三个必须注意的编码细节**：外层 href 用双引号、SVG 内部属性用单引号；`<` `>` 写成 `%3C` `%3E`；**颜色的 `#` 必须写成 `%23`**——不编码会被当成 URL fragment，图标直接不显示。想做深浅色两版就写两个 link，加 `media=\"(prefers-color-scheme: dark)\"`。 | 为什么只能用 data URI：`link href` **不在发布链路的资源收集白名单里**（那里只认 `src` 属性和 CSS `url()`），指向 `assets/` 的图标文件发布后必然 404；而且额外文件破坏单文件自包含，用户拿到一个 html 就该能用。 | 会不会被平台图标覆盖：不会。发布平台把自己的默认 favicon 注入在 `<head>` 最前面，浏览器对多个 icon link **取最后一个**，模型写在后面的那个生效。 | 豁免：(1) 产物是页面片段（没有完整 `<head>`）时不适用；(2) externalRefs 指向 CDN 域名（`lf3-static.bytednsdoc.com` 之类）时，那是**发布平台注入的**默认图标，不是你写的——迭代已发布产物时会看到，忽略即可，自己另加一个 data URI 的 link 就行（浏览器对多个 icon link 取最后一个）。",
+      "reportSource": "cdp"
+    }
+  },
+  "engine": "chrome_cli",
+  "chromiumExec": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "engineDegraded": true,
+  "engineDegradedReason": "playwright 未装",
+  "elapsedSec": 3.67,
+  "schemaVersion": 2,
+  "status": "fail",
+  "engineInfo": {
+    "name": "chrome_cli",
+    "degraded": true,
+    "degradedReasons": [
+      "playwright 未装"
+    ]
+  },
+  "input": {
+    "original": "C:\\Users\\x'x\\Desktop\\Claude-Code安装教程.html",
+    "resolvedPath": "C:\\Users\\x'x\\Desktop\\Claude-Code安装教程.html",
+    "baseUrl": "file:///C:/Users/x%27x/Desktop/Claude-Code%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html",
+    "protocol": "file",
+    "cwd": "C:\\Users\\x'x\\Doubao\\chats\\2026-10-20\\new-chat",
+    "mediaMode": {
+      "reducedMotion": true
+    }
+  },
+  "artifacts": {
+    "screenshots": [
+      {
+        "viewport": "desktop",
+        "path": "C:\\Users\\x'x\\Desktop\\_shots\\Claude-Code安装教程_desktop.jpg",
+        "size": 286457,
+        "visualCoverage": {
+          "complete": true,
+          "reason": null
+        }
+      }
+    ]
+  },
+  "summary": {
+    "blocker": 0,
+    "error": 8,
+    "warning": 2,
+    "info": 0
+  },
+  "findings": [
+    {
+      "ruleId": "emojiUsageWarning",
+      "severity": "warning",
+      "kind": "typography",
+      "viewport": "desktop",
+      "selector": "h3",
+      "evidence": {
+        "tag": "h3",
+        "chars": "⚠",
+        "contextText": "⚠️ 重要声明"
+      },
+      "dedupeKey": "emojiUsageWarning|desktop|h3|0"
+    },
+    {
+      "ruleId": "faviconWarning",
+      "severity": "warning",
+      "kind": "metadata",
+      "viewport": "desktop",
+      "selector": null,
+      "evidence": {
+        "present": false
+      },
+      "dedupeKey": "faviconWarning|desktop||0"
+    },
+    {
+      "ruleId": "deadButtons",
+      "severity": "error",
+      "kind": "interaction",
+      "viewport": "desktop",
+      "selector": "a",
+      "evidence": {
+        "tag": "a",
+        "text": "视频版",
+        "reason": "a-href-hash-no-handler",
+        "rect": [
+          1069,
+          157,
+          46,
+          26
+        ]
+      },
+      "dedupeKey": "deadButtons|desktop|a|0"
+    },
+    {
+      "ruleId": "deadButtons",
+      "severity": "error",
+      "kind": "interaction",
+      "viewport": "desktop",
+      "selector": "a",
+      "evidence": {
+        "tag": "a",
+        "text": "GitHub",
+        "reason": "a-href-hash-no-handler",
+        "rect": [
+          627,
+          1660,
+          50,
+          21
+        ]
+      },
+      "dedupeKey": "deadButtons|desktop|a|1"
+    },
+    {
+      "ruleId": "deadButtons",
+      "severity": "error",
+      "kind": "interaction",
+      "viewport": "desktop",
+      "selector": "a",
+      "evidence": {
+        "tag": "a",
+        "text": "智谱 GLM",
+        "reason": "a-href-hash-no-handler",
+        "rect": [
+          295,
+          2591,
+          69,
+          21
+        ]
+      },
+      "dedupeKey": "deadButtons|desktop|a|2"
+    },
+    {
+      "ruleId": "deadButtons",
+      "severity": "error",
+      "kind": "interaction",
+      "viewport": "desktop",
+      "selector": "a",
+      "evidence": {
+        "tag": "a",
+        "text": "MiniMax",
+        "reason": "a-href-hash-no-handler",
+        "rect": [
+          380,
+          2591,
+          61,
+          21
+        ]
+      },
+      "dedupeKey": "deadButtons|desktop|a|3"
+    },
+    {
+      "ruleId": "deadButtons",
+      "severity": "error",
+      "kind": "interaction",
+      "viewport": "desktop",
+      "selector": "a",
+      "evidence": {
+        "tag": "a",
+        "text": "Kimi",
+        "reason": "a-href-hash-no-handler",
+        "rect": [
+          457,
+          2591,
+          31,
+          21
+        ]
+      },
+      "dedupeKey": "deadButtons|desktop|a|4"
+    },
+    {
+      "ruleId": "deadButtons",
+      "severity": "error",
+      "kind": "interaction",
+      "viewport": "desktop",
+      "selector": "a",
+      "evidence": {
+        "tag": "a",
+        "text": "DeepSeek",
+        "reason": "a-href-hash-no-handler",
+        "rect": [
+          504,
+          2591,
+          71,
+          21
+        ]
+      },
+      "dedupeKey": "deadButtons|desktop|a|5"
+    },
+    {
+      "ruleId": "deadButtons",
+      "severity": "error",
+      "kind": "interaction",
+      "viewport": "desktop",
+      "selector": "a",
+      "evidence": {
+        "tag": "a",
+        "text": "API 服务",
+        "reason": "a-href-hash-no-handler",
+        "rect": [
+          493,
+          2634,
+          60,
+          21
+        ]
+      },
+      "dedupeKey": "deadButtons|desktop|a|6"
+    },
+    {
+      "ruleId": "deadButtons",
+      "severity": "error",
+      "kind": "interaction",
+      "viewport": "desktop",
+      "selector": "a",
+      "evidence": {
+        "tag": "a",
+        "text": "GitHub Releases",
+        "reason": "a-href-hash-no-handler",
+        "rect": [
+          427,
+          2813,
+          114,
+          21
+        ]
+      },
+      "dedupeKey": "deadButtons|desktop|a|7"
+    }
+  ],
+  "prioritizedActions": [
+    {
+      "ruleId": "deadButtons",
+      "severity": "error",
+      "viewport": "desktop",
+      "selector": "a"
+    },
+    {
+      "ruleId": "emojiUsageWarning",
+      "severity": "warning",
+      "viewport": "desktop",
+      "selector": "h3"
+    },
+    {
+      "ruleId": "faviconWarning",
+      "severity": "warning",
+      "viewport": "desktop",
+      "selector": null
+    }
+  ],
+  "reportPath": "C:\\Users\\x'x\\Desktop\\_shots\\report.json"
+}
